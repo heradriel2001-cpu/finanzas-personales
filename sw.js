@@ -4,8 +4,8 @@ const FILES = [
   "/finanzas-personales/",
   "/finanzas-personales/index.html",
   "/finanzas-personales/manifest.json",
-  "/finanzas-personales/AppImages/android-launchericon-192-192.png",
-  "/finanzas-personales/AppImages/android-launchericon-512-512.png"
+  "/finanzas-personales/android-launchericon-192-192.png",
+  "/finanzas-personales/android-launchericon-512-512.png"
 ];
 
 self.addEventListener("install", e => {
