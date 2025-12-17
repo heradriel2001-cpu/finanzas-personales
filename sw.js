@@ -1,12 +1,12 @@
-const CACHE = "finanzas-pwa-v3";
+const CACHE = "finanzas-v9";
 
 self.addEventListener("install", e => {
   e.waitUntil(
-    caches.open(CACHE).then(cache =>
-      cache.addAll([
-        "/finanzas-personales/",
-        "/finanzas-personales/index.html",
-        "/finanzas-personales/manifest.json"
+    caches.open(CACHE).then(c =>
+      c.addAll([
+        "./",
+        "./index.html",
+        "./manifest.json"
       ])
     )
   );
