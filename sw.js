@@ -1,29 +1,15 @@
-const CACHE = "finanzas-pwa-v4";
-
-const FILES = [
-  "/finanzas-personales/",
-  "/finanzas-personales/index.html",
-  "/finanzas-personales/manifest.json",
-  "/finanzas-personales/android-launchericon-192-192.png",
-  "/finanzas-personales/android-launchericon-512-512.png"
-];
+const CACHE = "finanzas-pwa-v3";
 
 self.addEventListener("install", e => {
   e.waitUntil(
-    caches.open(CACHE).then(cache => cache.addAll(FILES))
-  );
-  self.skipWaiting();
-});
-
-self.addEventListener("activate", e => {
-  e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
-        keys.filter(k => k !== CACHE).map(k => caches.delete(k))
-      )
+    caches.open(CACHE).then(cache =>
+      cache.addAll([
+        "/finanzas-personales/",
+        "/finanzas-personales/index.html",
+        "/finanzas-personales/manifest.json"
+      ])
     )
   );
-  self.clients.claim();
 });
 
 self.addEventListener("fetch", e => {
